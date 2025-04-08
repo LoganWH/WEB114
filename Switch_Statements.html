@@ -1,0 +1,54 @@
+<!--
+Logan Hewitt
+April 8, 2025
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Favorite Day Message</title>
+</head>
+<body>
+  <h1>Switch Statement Example</h1>
+
+  <h2>Question:</h2>
+  <p>When would you use a switch statement in your projects?</p>
+
+  <h2>Answer:</h2>
+  <p>A switch statement is useful when you have a variable that can take multiple specific values, and you want to execute different code based on which value it is.</p>
+
+  <script>
+    // Prompt user for their favorite day
+    const favDay = prompt("What is your favorite day of the week? (e.g., Monday, Tuesday)").toLowerCase();
+
+    // this is for the switch statement to display a message
+    switch (favDay) {
+      case "monday":
+        console.log("Mondays Suck");
+        break;
+      case "tuesday":
+        console.log("Tuesdays are for progress");
+        break;
+      case "wednesday":
+        console.log("Wednesdays are halfway there");
+        break;
+      case "thursday":
+        console.log("Thursdays are for focus");
+        break;
+      case "friday":
+        console.log("Fridays are the best");
+        break;
+      case "saturday":
+        console.log("Saturdays are for fun");
+        break;
+      case "sunday":
+        console.log("Sundays are for rest");
+        break;
+      default:
+        console.log("That's an interesting day");
+        break;
+    }
+  </script>
+</body>
+</html>
