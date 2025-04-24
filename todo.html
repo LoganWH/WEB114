@@ -1,0 +1,57 @@
+<!--Logan, Hewitt
+2025-04-23-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To-do List</title>
+</head>
+<body>
+    <!--This is the setup for the html structure-->
+    <h1>To-Do List</h1>
+
+    <!--This will create a text input field with id="taskInput"-->
+    <input type="text" id="taskInput" placeholder="Enter a task">
+
+    <!--This is the button-->
+    <button id="addTaskBtn">Add Task</button>
+
+    <!--this is the Unordered list-->
+    <ul id='tasklist'></ul>
+    <script>
+        //javascript file//
+        const input = document.getElementById('taskInput');
+        const button = document.getElementById('addTaskBtn');
+        const list = document.getElementById('tasklist');
+
+        //add event listner
+        button.addEventListener('click', function () {
+            const task = input.value.trim(); //gets value from the input
+
+            if (task === ''){
+                alert('please enter a task.');
+                return;
+        }
+
+        const listItem = document.createElement('li');
+
+        listItem.textContent = task;
+
+        const removeBtn = document.createElement('button');
+        removeBtn.textContent = 'remove';
+
+        removeBtn.addEventListener('click', function () {
+            list.removeChild(listItem);
+        });
+
+        listItem.appendChild(removeBtn);
+        list.appendChild(listItem);
+
+
+        input.value = '';
+        
+    });
+     </script>
+</body>
+</html>
