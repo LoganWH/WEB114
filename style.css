@@ -1,0 +1,149 @@
+/* Reset + Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    position: relative;
+    font-family: 'Press Start 2P', monospace;
+    background: radial-gradient(circle at center, #1f1c2c 0%, #111 100%);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    min-height: 100vh;
+    overflow: hidden;
+    z-index: 1;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 200%;
+    height: 200%;
+    background: url('https://www.transparenttextures.com/patterns/stardust.png');
+    opacity: 0.15;
+    animation: floatStars 60s linear infinite;
+    z-index: 0;
+}
+
+/* Floating star animation */
+@keyframes floatStars {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-500px, -500px); }
+}
+
+/* Header */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ffcb05;
+    text-shadow: 2px 2px #333;
+    z-index: 2;
+}
+
+/* Game Container */
+#game-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    z-index: 2;
+}
+
+/* Question Text */
+#question {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Choices */
+#choices button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    background-color: #2a2e35;
+    border: 2px solid #ffcb05;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#choices button:hover {
+    background-color: #ffcb05;
+    color: #000;
+    transform: scale(1.03);
+}
+
+#choices button:disabled {
+    background-color: #555;
+    border-color: #777;
+    cursor: not-allowed;
+}
+
+/* Feedback */
+#feedback {
+    font-size: 1.2rem;
+    margin: 20px 0;
+    min-height: 24px;
+}
+
+/* Timer and Score */
+#timer, #score {
+    font-weight: bold;
+    color: #00ffcc;
+}
+
+p {
+    margin: 8px 0;
+}
+
+/* Next Button */
+#next-btn {
+    background-color: #ffcb05;
+    color: #000;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#next-btn:hover {
+    background-color: #ffd740;
+    transform: scale(1.05);
+}
+
+#next-btn:disabled {
+    background-color: #aaa;
+    color: #444;
+    cursor: not-allowed;
+}
+
+/* Score Pop Animation */
+#score.pop {
+    animation: pop 0.3s ease;
+}
+
+@keyframes pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.4); }
+    100% { transform: scale(1); }
+}
